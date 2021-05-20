@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-const EquipmentSelectCard = ({equipment}) => {
+const EquipmentSelectCard = ({equipment, setHeroWeapon}) => {
 
     if (equipment === undefined) {
         return <h1>LOADING...</h1>
@@ -19,11 +19,12 @@ const EquipmentSelectCard = ({equipment}) => {
     let selection = equipment.data[ranNum]
 
     return (
-        <div>
-            <img src={selection.image} alt="" />
-            <h5>{selection.name}</h5>
+        <div className="equipment-select-card">
+            <img src={selection.image} alt="" className="equipment-select-image"/>
+            <h5 className="equipment-select-name">{selection.name}</h5>
             <h2>{selection.attack}</h2>
-            <p>{selection.description}</p>
+            <p className="equipment-select-description">{selection.description}</p>
+            <button onClick={() => setHeroWeapon(selection)}>Choose Weapon</button>
         </div>
     );
 };

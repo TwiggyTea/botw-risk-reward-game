@@ -1,38 +1,45 @@
-.App {
-  text-align: center;
+.equipment-select-page{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 250px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.equipment-select-card{
+  border: 1px solid black;
+  display: grid;
+  align-content: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  width: 282px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.equipment-select-image{
+  border: 1px solid black;
+  align-content: center;
+  grid-column: 1 / span 5;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.equipment-select-name{
+  border: 1px solid black;
+  align-content: center;
+  grid-column: 3;
 }
 
-.App-link {
-  color: #61dafb;
+.equipment-select-description{
+  border: 1px solid black;
+  align-content: center;
+  grid-column: 1 / span 5;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.enemy-card{
+  border: 1px solid black;
+  display: grid;
+  align-content: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.hero-card{
+  border: 1px solid black;
+  display: grid;
+  align-content: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }

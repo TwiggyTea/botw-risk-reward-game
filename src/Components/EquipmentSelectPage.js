@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import EquipmentSelectCard from './EquipmentSelectCard'
 
-const EquipmentSelectPage = ({ equipment, setEquipment}) => {
+const EquipmentSelectPage = ({ equipment, setEquipment, setHeroWeapon}) => {
 
     useEffect(() => {
         const url = `https://botw-compendium.herokuapp.com/api/v2/category/equipment`;
@@ -17,10 +17,10 @@ const EquipmentSelectPage = ({ equipment, setEquipment}) => {
         }, [])
 
     return (
-        <div>
-            <EquipmentSelectCard equipment={equipment}/>
-            <EquipmentSelectCard equipment={equipment}/>
-            <EquipmentSelectCard equipment={equipment}/>
+        <div className="equipment-select-page">
+            <EquipmentSelectCard equipment={equipment} setHeroWeapon={setHeroWeapon}/>
+            <EquipmentSelectCard equipment={equipment} setHeroWeapon={setHeroWeapon}/>
+            <EquipmentSelectCard equipment={equipment} setHeroWeapon={setHeroWeapon}/>
         </div>
     );
 };
