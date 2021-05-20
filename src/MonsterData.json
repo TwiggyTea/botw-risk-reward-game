@@ -1,0 +1,52 @@
+[
+    {
+        "id": 108,
+        "health": 40,
+        "attack": 3
+    },     
+    {
+        "id": 143,
+        "health": 40,
+        "attack": 1
+    },     
+    {
+        "id": 97,
+        "health": 40,
+        "attack": 4
+    },     
+    {
+        "id": 119,
+        "health": 60,
+        "attack": 3
+    },     
+    {
+        "id": 122,
+        "health": 60,
+        "attack": 5
+    },     
+    {
+        "id": 96,
+        "health": 20,
+        "attack": 2
+    },     
+    {
+        "id": 103,
+        "health": 40,
+        "attack": 2
+    },     
+    {
+        "id": 84,
+        "health": 20,
+        "attack": 2
+    },     
+    {
+        "id": 147,
+        "health": 90,
+        "attack": 3
+    },     
+    {
+        "id": 108,
+        "health": 10,
+        "attack": 3
+    }
+]
