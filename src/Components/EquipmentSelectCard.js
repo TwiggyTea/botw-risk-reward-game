@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom'
 
 const EquipmentSelectCard = ({equipment, setHeroWeapon}) => {
 
@@ -24,7 +25,9 @@ const EquipmentSelectCard = ({equipment, setHeroWeapon}) => {
             <h5 className="equipment-select-name">{selection.name}</h5>
             <h2>{selection.attack}</h2>
             <p className="equipment-select-description">{selection.description}</p>
+            <Link to="/fight-or-flee">
             <button onClick={() => setHeroWeapon(selection)}>Choose Weapon</button>
+            </Link>
         </div>
     );
 };

@@ -1,51 +1,61 @@
 [
     {
+        "name": "Moblin",
         "id": 108,
         "health": 40,
         "attack": 3
     },     
     {
+        "name": "Stone Pebblit",
         "id": 143,
         "health": 40,
         "attack": 1
     },     
     {
+        "name": "Fire Wizzrobe",
         "id": 97,
         "health": 40,
         "attack": 4
     },     
     {
+        "name": "Electric Lizalfos",
         "id": 119,
         "health": 60,
         "attack": 3
     },     
     {
+        "name": "Blue-Maned Lynel",
         "id": 122,
         "health": 60,
         "attack": 5
     },     
     {
+        "name": "Treasure Octorok",
         "id": 96,
         "health": 20,
         "attack": 2
     },     
     {
+        "name": "Bokoblin",
         "id": 103,
         "health": 40,
         "attack": 2
     },     
     {
+        "name": "Chuchu",
         "id": 84,
         "health": 20,
         "attack": 2
     },     
     {
+        "name": "Hinox",
         "id": 147,
         "health": 90,
         "attack": 3
     },     
     {
-        "id": 108,
+        "name": "Keese",
+        "id": 88,
         "health": 10,
         "attack": 3
     }

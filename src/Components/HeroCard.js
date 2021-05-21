@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HeroCard = ({heroWeapon}) => {
+const HeroCard = ({heroWeapon, heroHealth, setHeroHealth}) => {
 
     if (heroWeapon === undefined) {
         return (        
@@ -13,6 +13,7 @@ const HeroCard = ({heroWeapon}) => {
 
     return (
         <div className="hero-card">
+            <h1>Health: {heroHealth}</h1>
             <img src={heroWeapon.image} alt="" />
             <h2>{heroWeapon.name}</h2>
             <h2>{heroWeapon.attack}</h2>
