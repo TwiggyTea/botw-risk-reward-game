@@ -14,6 +14,7 @@ const HeroCard = ({heroWeapon, heroHealth, setHeroHealth}) => {
     return (
         <div className="hero-card">
             <h1>Health: {heroHealth}</h1>
+            <h1>{heroHealth.length}</h1>
             <img src={heroWeapon.image} alt="" />
             <h2>{heroWeapon.name}</h2>
             <h2>{heroWeapon.attack}</h2>

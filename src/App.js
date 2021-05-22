@@ -11,8 +11,7 @@ function App() {
   const [currentMonster, setCurrentMonster] = useState()
   const [equipment, setEquipment] = useState()
   const [heroWeapon, setHeroWeapon] = useState()
-  const [heroHealth, setHeroHealth] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,])
-  console.log(heroWeapon)
+  const [heroHealth, setHeroHealth] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
 
   return (
     <div>
