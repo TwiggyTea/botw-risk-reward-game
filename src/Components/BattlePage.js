@@ -7,7 +7,7 @@ import { render } from '@testing-library/react';
 
 
 
-const BattlePage = ({currentMonster, setCurrentMonster, heroWeapon, heroHealth, setHeroHealth}) => {
+const BattlePage = ({currentMonster, setCurrentMonster, heroWeapon, heroHealth, setHeroHealth, score, setScore}) => {
 
     const [redirect, setRedirect] = useState({url: null})
     const [damageDone, setDamageDone] = useState()
@@ -59,6 +59,9 @@ const BattlePage = ({currentMonster, setCurrentMonster, heroWeapon, heroHealth, 
         setTimeout(() => {
 
             if (currentMonster?.health <= damageDone) {
+
+                setScore(score + (currentMonster.health * currentMonster.attack))
+
                 if (counter.current >= 3) {
                     setRedirect({url: '/equipment-select'})
                 } else {setRedirect({url: 'new battle'})
@@ -123,6 +126,7 @@ const BattlePage = ({currentMonster, setCurrentMonster, heroWeapon, heroHealth, 
     return (
         <div>
             <h1>{damageDone}</h1>
+            <h1>SCORE: {score}</h1>
             <EnemyCard currentMonster={currentMonster}/>
             <HeroCard heroWeapon={heroWeapon} heroHealth={heroHealth} setHeroHealth={setHeroHealth}/>
         </div>
