@@ -14,6 +14,8 @@ function App() {
   const [heroWeapon, setHeroWeapon] = useState()
   const [score, setScore] = useState(0)
   const [heroHealth, setHeroHealth] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+  const [monstersAhead, setMonstersAhead] = useState(3)
+  const [maxMonsters, setMaxMonsters] = useState(1)
 
   return (
     <div>
@@ -43,7 +45,7 @@ function App() {
             <EquipmentSelectPage equipment={equipment} setEquipment={setEquipment} setHeroWeapon={setHeroWeapon}/>}/>
 
       <Route path="/fight-or-flee" render={() => 
-            <FightOrFlee/>}/>
+            <FightOrFlee heroHealth={heroHealth} setHeroHealth={setHeroHealth} monstersAhead={monstersAhead} setMonstersAhead={setMonstersAhead} maxMonsters={maxMonsters} setMaxMonsters={setMaxMonsters}/>}/>
 
 
       <Route path="/score-screen" render={() => 
@@ -52,7 +54,7 @@ function App() {
       <Route path="/battle" render={() => {
         return (
           <div>
-            <BattlePage currentMonster={currentMonster} setCurrentMonster={setCurrentMonster} heroWeapon={heroWeapon} heroHealth={heroHealth} setHeroHealth={setHeroHealth} score={score} setScore={setScore}/>
+            <BattlePage currentMonster={currentMonster} setCurrentMonster={setCurrentMonster} heroWeapon={heroWeapon} heroHealth={heroHealth} setHeroHealth={setHeroHealth} score={score} setScore={setScore} monstersAhead={monstersAhead} setMonstersAhead={setMonstersAhead} maxMonsters={maxMonsters} setMaxMonsters={setMaxMonsters}/>
           </div>
         )
       }     

@@ -1,15 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-const FightOrFlee = () => {
+const FightOrFlee = ({monstersAhead, setMonstersAhead, maxMonsters, setMaxMonsters}) => {
+
+    setMonstersAhead(Math.floor(Math.random() * maxMonsters) + 2)
+
     return (
         <div>
+
+            <h1>There are {monstersAhead} monsters ahead, do you want to ...</h1>
+
             <Link to="/battle">
-            <button>FIGHT</button>
+            <button>FIGHT!</button>
             </Link>
             or
             <Link to="/score-screen">
-            <button>FLEE</button>
+            <button>FLEE!</button>
             </Link>
         </div>
     );

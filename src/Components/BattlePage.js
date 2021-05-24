@@ -6,14 +6,19 @@ import { Route, Redirect } from 'react-router-dom'
 import { render } from '@testing-library/react';
 
 
-
-const BattlePage = ({currentMonster, setCurrentMonster, heroWeapon, heroHealth, setHeroHealth, score, setScore}) => {
+const BattlePage = ({currentMonster, setCurrentMonster, heroWeapon, heroHealth, setHeroHealth, score, setScore, monstersAhead, setMaxMonsters, maxMonsters}) => {
 
     const [redirect, setRedirect] = useState({url: null})
     const [damageDone, setDamageDone] = useState()
     let counter = useRef(1)
     let ranNum = Math.floor(Math.random() * MonsterData.length)
     let selection = MonsterData[ranNum]
+
+    useEffect(() => {
+        const tempMax = maxMonsters
+        setHeroHealth([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+        setMaxMonsters(tempMax + 1)
+        }, [])
 
     useEffect(() => {
         
@@ -62,7 +67,7 @@ const BattlePage = ({currentMonster, setCurrentMonster, heroWeapon, heroHealth, 
 
                 setScore(score + (currentMonster.health * currentMonster.attack))
 
-                if (counter.current >= 3) {
+                if (counter.current >= monstersAhead) {
                     setRedirect({url: '/equipment-select'})
                 } else {setRedirect({url: 'new battle'})
                     console.log('redirect attempted')
