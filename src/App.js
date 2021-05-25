@@ -3,6 +3,7 @@ import './App.css';
 import BattlePage from './Components/BattlePage'
 import EquipmentSelectPage from './Components/EquipmentSelectPage'
 import StartPage from './Components/StartPage'
+import AboutPage from './Components/AboutPage'
 import FightOrFlee from './Components/FightOrFlee'
 import ScoreScreen from './Components/ScoreScreen'
 import GameOver from './Components/GameOver'
@@ -45,6 +46,9 @@ function App() {
 
       <Route path="/" exact render={() => 
             <StartPage/>}/>
+
+  <Route path="/about" exact render={() => 
+              <AboutPage/>}/>
 
       <Route path="/equipment-select" render={() => 
             <EquipmentSelectPage equipment={equipment} setEquipment={setEquipment} setHeroWeapon={setHeroWeapon}/>}/>

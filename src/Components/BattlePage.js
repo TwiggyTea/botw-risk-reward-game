@@ -10,6 +10,7 @@ const BattlePage = ({currentMonster, setCurrentMonster, heroWeapon, heroHealth, 
 
     const [redirect, setRedirect] = useState({url: null})
     const [damageDone, setDamageDone] = useState()
+    const [isHurt, setIsHurt] = useState(false)
     let counter = useRef(1)
     let ranNum = Math.floor(Math.random() * MonsterData.length)
     let selection = MonsterData[ranNum]
@@ -96,6 +97,12 @@ const BattlePage = ({currentMonster, setCurrentMonster, heroWeapon, heroHealth, 
     }, [damageDone])
 
     const roundPassage = () => {
+
+        setIsHurt(true)
+        setTimeout(() => {
+            setIsHurt(false)
+        }, 700)
+
         if (currentMonster?.health <= damageDone) {
 
             setScore(score + (currentMonster.health * currentMonster.attack))
@@ -161,9 +168,8 @@ const BattlePage = ({currentMonster, setCurrentMonster, heroWeapon, heroHealth, 
 
     return (
         <div className="battle-page">
-            <h1>{damageDone}</h1>
             <h1>SCORE: {score}</h1>
-            <EnemyCard currentMonster={currentMonster}/>
+            <EnemyCard currentMonster={currentMonster} damageDone={damageDone} isHurt={isHurt} setIsHurt={setIsHurt}/>
             <button onClick={() => roundPassage()}>HIT!</button>
             <HeroCard heroWeapon={heroWeapon} heroHealth={heroHealth} setHeroHealth={setHeroHealth}/>
         </div>

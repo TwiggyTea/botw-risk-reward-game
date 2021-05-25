@@ -7,13 +7,51 @@
   font-family: botw;
 }
 
+/* battle page */
+
 .battle-page{
   background-image: url(/src/botw-backround-image.png);
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
+
+.enemy-card{
+  border: 1px solid black;
+  display: grid;
+  align-content: center;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
+}
+
+.animate-hit{
+  animation: hit cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.monster-name {
+
+}
+
+.hero-card{
+  border: 1px solid black;
+  display: grid;
+  align-content: center;
+  background-color: white;
+  grid-column: 2 / span 1;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
+}
+
+#health-bar{
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-template-rows: 1px, 1px
+}
+
+
+/* equipment select */
 
 .equipment-select-page{
   display: grid;
@@ -47,16 +85,19 @@
   grid-column: 1 / span 5;
 }
 
-.enemy-card{
-  border: 1px solid black;
-  display: grid;
-  align-content: center;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-}
 
-.hero-card{
-  border: 1px solid black;
-  display: grid;
-  align-content: center;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+@keyframes hit {
+  0% {
+    background: red;
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    background: red;
+    opacity: 1;
+  }
 }

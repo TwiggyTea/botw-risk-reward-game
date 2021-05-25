@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom'
 
 const FightOrFlee = ({monstersAhead, setMonstersAhead, maxMonsters, setMaxMonsters}) => {
 
+useEffect(() => {
     setMonstersAhead(Math.floor(Math.random() * maxMonsters) + 2)
+}, [])
 
     return (
         <div>

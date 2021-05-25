@@ -23,7 +23,6 @@ const EquipmentSelectCard = ({equipment, setHeroWeapon}) => {
         <div className="equipment-select-card">
             <img src={selection.image} alt="" className="equipment-select-image"/>
             <h5 className="equipment-select-name">{selection.name}</h5>
-            <h2>{selection.attack}</h2>
             <p className="equipment-select-description">{selection.description}</p>
             <Link to="/fight-or-flee">
             <button onClick={() => setHeroWeapon(selection)}>Choose Weapon</button>

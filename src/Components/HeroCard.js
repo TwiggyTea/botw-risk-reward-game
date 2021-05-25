@@ -1,4 +1,5 @@
 import React from 'react';
+import heart from './heart.svg'
 
 const HeroCard = ({heroWeapon, heroHealth, setHeroHealth}) => {
 
@@ -13,11 +14,11 @@ const HeroCard = ({heroWeapon, heroHealth, setHeroHealth}) => {
 
     return (
         <div className="hero-card">
-            <h1>Health: {heroHealth}</h1>
+            <h1>Health: </h1>
+            <div id="health-bar">{heroHealth.map((healthNum) => <img src={heart} alt="" />)}</div>
             <h1>{heroHealth.length}</h1>
             <img src={heroWeapon.image} alt="" />
             <h2>{heroWeapon.name}</h2>
-            <h2>{heroWeapon.attack}</h2>
         </div>
     );
 };
