@@ -1,3 +1,20 @@
+@font-face {
+  font-family: botw;
+  src: url(/src/botw-font.otf) format("opentype");
+}
+
+* {
+  font-family: botw;
+}
+
+.battle-page{
+  background-image: url(/src/botw-backround-image.png);
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .equipment-select-page{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

@@ -42,26 +42,26 @@ const BattlePage = ({currentMonster, setCurrentMonster, heroWeapon, heroHealth, 
         }, [])
 
 
-        const battle = () => {
-            setTimeout(() => {
-                if (currentMonster?.health > damageDone && heroHealth.length > 0) {
+        // const battle = () => {
+        //     setTimeout(() => {
+        //         if (currentMonster?.health > damageDone && heroHealth.length > 0) {
         
-                    console.log(currentMonster.health)
-                    console.log(damageDone)
-                    console.log(heroHealth)
-                    console.log(counter)
+        //             console.log(currentMonster.health)
+        //             console.log(damageDone)
+        //             console.log(heroHealth)
+        //             console.log(counter)
             
-                    for (let i = 0; i < currentMonster.attack; i++) {
-                        let currentHealth = heroHealth.length - 1
-                        setHeroHealth(Array(currentHealth).fill(0))
-                    }
-                    setDamageDone(damageDone + heroWeapon.attack)}
-            }, 5000 * counter)
-        }
+        //             for (let i = 0; i < currentMonster.attack; i++) {
+        //                 let currentHealth = heroHealth.length - 1
+        //                 setHeroHealth(Array(currentHealth).fill(0))
+        //             }
+        //             setDamageDone(damageDone + heroWeapon.attack)}
+        //     }, 5000 * counter)
+        // }
 
     useEffect(() => {
         
-        setTimeout(() => {
+        // setTimeout(() => {
 
             if (currentMonster?.health <= damageDone) {
 
@@ -72,32 +72,63 @@ const BattlePage = ({currentMonster, setCurrentMonster, heroWeapon, heroHealth, 
                 } else {setRedirect({url: 'new battle'})
                     console.log('redirect attempted')
                     counter.current++}
-            }
+            // }
 
-            if (currentMonster?.health > damageDone && heroHealth.length > 0) {
+            // if (currentMonster?.health > damageDone && heroHealth.length > 0) {
     
-                console.log(currentMonster.health)
-                console.log(damageDone)
-                console.log(heroHealth)
-                console.log(counter)
-
-                let currentHealth;
+            //     let currentHealth;
         
-                for (let i = 1; i <= currentMonster.attack; i++) {
-                    console.log('monster hit')
-                    currentHealth = heroHealth.length - i
-                    console.log(currentHealth)
-                    if (currentHealth > 0) {
-                        setHeroHealth(Array(currentHealth).fill(0))
-                    } else {
-                        console.log('you lose')
-                        return
-                    }
+            //     for (let i = 1; i <= currentMonster.attack; i++) {
+            //         console.log('monster hit')
+            //         currentHealth = heroHealth.length - i
+            //         console.log(currentHealth)
+            //         if (currentHealth > 0) {
+            //             setHeroHealth(Array(currentHealth).fill(0))
+            //         } else {
+            //             console.log('you lose')
+            //             setRedirect({url: 'game-over'})
+            //             return
+            //         }
                 }
-                setDamageDone(damageDone + heroWeapon.attack)}
-        }, 1500)
+                // setDamageDone(damageDone + heroWeapon.attack)}
+        // }, 1500)
 
     }, [damageDone])
+
+    const roundPassage = () => {
+        if (currentMonster?.health <= damageDone) {
+
+            setScore(score + (currentMonster.health * currentMonster.attack))
+
+            if (counter.current >= monstersAhead) {
+                setRedirect({url: '/equipment-select'})
+            } else {setRedirect({url: 'new battle'})
+                console.log('redirect attempted')
+                counter.current++}
+        }
+
+        if (currentMonster?.health > damageDone && heroHealth.length > 0) {
+
+            let currentHealth;
+    
+            for (let i = 1; i <= currentMonster.attack; i++) {
+                console.log('monster hit')
+                currentHealth = heroHealth.length - i
+                console.log(currentHealth)
+                if (currentHealth > 0) {
+                    setHeroHealth(Array(currentHealth).fill(0))
+                } else {
+                    console.log('you lose')
+                    setRedirect({url: 'game-over'})
+                    return
+                }
+            }
+            setDamageDone(damageDone + heroWeapon.attack)}
+    }
+
+    if (heroWeapon === undefined) {
+        return <Redirect to="/" />
+    }
 
     if (currentMonster === undefined) {
         return <h1>LOADING...</h1>
@@ -129,10 +160,11 @@ const BattlePage = ({currentMonster, setCurrentMonster, heroWeapon, heroHealth, 
     }
 
     return (
-        <div>
+        <div className="battle-page">
             <h1>{damageDone}</h1>
             <h1>SCORE: {score}</h1>
             <EnemyCard currentMonster={currentMonster}/>
+            <button onClick={() => roundPassage()}>HIT!</button>
             <HeroCard heroWeapon={heroWeapon} heroHealth={heroHealth} setHeroHealth={setHeroHealth}/>
         </div>
     );

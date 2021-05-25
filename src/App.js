@@ -5,6 +5,7 @@ import EquipmentSelectPage from './Components/EquipmentSelectPage'
 import StartPage from './Components/StartPage'
 import FightOrFlee from './Components/FightOrFlee'
 import ScoreScreen from './Components/ScoreScreen'
+import GameOver from './Components/GameOver'
 import { Link, Route } from 'react-router-dom'
 
 function App() {
@@ -37,6 +38,10 @@ function App() {
       <button>BATTLE</button>
       </Link>
 
+      <Link to="/game-over">
+      <button>GAME OVER</button>
+      </Link>
+
 
       <Route path="/" exact render={() => 
             <StartPage/>}/>
@@ -47,9 +52,11 @@ function App() {
       <Route path="/fight-or-flee" render={() => 
             <FightOrFlee heroHealth={heroHealth} setHeroHealth={setHeroHealth} monstersAhead={monstersAhead} setMonstersAhead={setMonstersAhead} maxMonsters={maxMonsters} setMaxMonsters={setMaxMonsters}/>}/>
 
-
       <Route path="/score-screen" render={() => 
             <ScoreScreen score={score}/>}/>
+
+      <Route path="/game-over" render={() => 
+                  <GameOver score={score}/>}/>
 
       <Route path="/battle" render={() => {
         return (
