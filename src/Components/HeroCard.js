@@ -1,7 +1,7 @@
 import React from 'react';
 import heart from './heart.svg'
 
-const HeroCard = ({heroWeapon, heroHealth, setHeroHealth}) => {
+const HeroCard = ({heroWeapon, heroHealth}) => {
 
     if (heroWeapon === undefined) {
         return (        
@@ -14,11 +14,9 @@ const HeroCard = ({heroWeapon, heroHealth, setHeroHealth}) => {
 
     return (
         <div className="hero-card">
-            <h1>Health: </h1>
-            <div id="health-bar">{heroHealth.map((healthNum) => <img src={heart} alt="" />)}</div>
-            <h1>{heroHealth.length}</h1>
-            <img src={heroWeapon.image} alt="" />
-            <h2>{heroWeapon.name}</h2>
+            <div id="health-bar">{heroHealth.map((healthNum) => <img className="heart" src={heart} alt="" />)}</div>
+            <img id="hero-weapon-image" src={heroWeapon.image} alt="" />
+            <h2 id="hero-weapon-name">{heroWeapon.name}</h2>
         </div>
     );
 };

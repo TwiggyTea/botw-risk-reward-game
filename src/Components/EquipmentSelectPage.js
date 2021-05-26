@@ -18,6 +18,7 @@ const EquipmentSelectPage = ({ equipment, setEquipment, setHeroWeapon}) => {
 
     return (
         <div className="equipment-select-page">
+            <h1 id="equipment-select-text">Choose your weapon!</h1>
             <EquipmentSelectCard equipment={equipment} setHeroWeapon={setHeroWeapon}/>
             <EquipmentSelectCard equipment={equipment} setHeroWeapon={setHeroWeapon}/>
             <EquipmentSelectCard equipment={equipment} setHeroWeapon={setHeroWeapon}/>

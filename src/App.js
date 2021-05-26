@@ -22,7 +22,7 @@ function App() {
   return (
     <div>
 
-      <Link to="/">
+      {/* <Link to="/">
       <button>START PAGE</button>
       </Link>
 
@@ -41,7 +41,7 @@ function App() {
 
       <Link to="/game-over">
       <button>GAME OVER</button>
-      </Link>
+      </Link> */}
 
 
       <Route path="/" exact render={() => 
@@ -60,7 +60,7 @@ function App() {
             <ScoreScreen score={score}/>}/>
 
       <Route path="/game-over" render={() => 
-                  <GameOver score={score}/>}/>
+            <GameOver score={score}/>}/>
 
       <Route path="/battle" render={() => {
         return (

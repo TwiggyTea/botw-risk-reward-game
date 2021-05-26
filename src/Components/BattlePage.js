@@ -43,26 +43,7 @@ const BattlePage = ({currentMonster, setCurrentMonster, heroWeapon, heroHealth, 
         }, [])
 
 
-        // const battle = () => {
-        //     setTimeout(() => {
-        //         if (currentMonster?.health > damageDone && heroHealth.length > 0) {
-        
-        //             console.log(currentMonster.health)
-        //             console.log(damageDone)
-        //             console.log(heroHealth)
-        //             console.log(counter)
-            
-        //             for (let i = 0; i < currentMonster.attack; i++) {
-        //                 let currentHealth = heroHealth.length - 1
-        //                 setHeroHealth(Array(currentHealth).fill(0))
-        //             }
-        //             setDamageDone(damageDone + heroWeapon.attack)}
-        //     }, 5000 * counter)
-        // }
-
     useEffect(() => {
-        
-        // setTimeout(() => {
 
             if (currentMonster?.health <= damageDone) {
 
@@ -71,29 +52,8 @@ const BattlePage = ({currentMonster, setCurrentMonster, heroWeapon, heroHealth, 
                 if (counter.current >= monstersAhead) {
                     setRedirect({url: '/equipment-select'})
                 } else {setRedirect({url: 'new battle'})
-                    console.log('redirect attempted')
                     counter.current++}
-            // }
-
-            // if (currentMonster?.health > damageDone && heroHealth.length > 0) {
-    
-            //     let currentHealth;
-        
-            //     for (let i = 1; i <= currentMonster.attack; i++) {
-            //         console.log('monster hit')
-            //         currentHealth = heroHealth.length - i
-            //         console.log(currentHealth)
-            //         if (currentHealth > 0) {
-            //             setHeroHealth(Array(currentHealth).fill(0))
-            //         } else {
-            //             console.log('you lose')
-            //             setRedirect({url: 'game-over'})
-            //             return
-            //         }
                 }
-                // setDamageDone(damageDone + heroWeapon.attack)}
-        // }, 1500)
-
     }, [damageDone])
 
     const roundPassage = () => {
@@ -110,7 +70,6 @@ const BattlePage = ({currentMonster, setCurrentMonster, heroWeapon, heroHealth, 
             if (counter.current >= monstersAhead) {
                 setRedirect({url: '/equipment-select'})
             } else {setRedirect({url: 'new battle'})
-                console.log('redirect attempted')
                 counter.current++}
         }
 
@@ -119,13 +78,10 @@ const BattlePage = ({currentMonster, setCurrentMonster, heroWeapon, heroHealth, 
             let currentHealth;
     
             for (let i = 1; i <= currentMonster.attack; i++) {
-                console.log('monster hit')
                 currentHealth = heroHealth.length - i
-                console.log(currentHealth)
                 if (currentHealth > 0) {
                     setHeroHealth(Array(currentHealth).fill(0))
                 } else {
-                    console.log('you lose')
                     setRedirect({url: 'game-over'})
                     return
                 }
@@ -141,7 +97,6 @@ const BattlePage = ({currentMonster, setCurrentMonster, heroWeapon, heroHealth, 
         return <h1>LOADING...</h1>
     }
 
-    // battle(currentMonster, heroHealth, heroWeapon)
     if (redirect.url) {
 
         if (redirect.url == 'new battle') {
@@ -161,16 +116,15 @@ const BattlePage = ({currentMonster, setCurrentMonster, heroWeapon, heroHealth, 
             })
             setRedirect({url: null})
         } else {
-            console.log(`redirect useEffect ${redirect.url}`)
             return <Redirect to={redirect.url} />
         }
     }
 
     return (
         <div className="battle-page">
-            <h1>SCORE: {score}</h1>
+            <h1 id="game-score">SCORE: {score}</h1>
             <EnemyCard currentMonster={currentMonster} damageDone={damageDone} isHurt={isHurt} setIsHurt={setIsHurt}/>
-            <button onClick={() => roundPassage()}>HIT!</button>
+            <button id="hit-button" onClick={() => roundPassage()}>HIT!</button>
             <HeroCard heroWeapon={heroWeapon} heroHealth={heroHealth} setHeroHealth={setHeroHealth}/>
         </div>
     );

@@ -1,18 +1,20 @@
 import React from 'react';
-import AboutPage from './AboutPage'
 import { Link } from 'react-router-dom'
 
 
 
 const StartPage = () => {
     return (
-        <div>
-            <Link to="/equipment-select">
-            <button>START</button>
-            </Link>
-            <Link to="/about">
-            <button>ABOUT</button>
-            </Link>
+        <div className="start-page">
+            <h1 id="title">FIGHT OR FLEE?</h1>
+            <div id="start-button-container">
+                <Link to="/equipment-select">
+                <button id="start-button">START</button>
+                </Link>
+                <Link to="/about">
+                <button id="about-button">ABOUT</button>
+                </Link>
+            </div>
         </div>
     );
 };

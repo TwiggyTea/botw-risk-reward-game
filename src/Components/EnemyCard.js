@@ -8,15 +8,15 @@ const EnemyCard = ({currentMonster, damageDone, isHurt, setIsHurt}) => {
     return (
         <div className="enemy-card">
 
-            {!isHurt ? <img src={currentMonster.image} alt="" /> : <img className="animate-hit" src={currentMonster.image} alt="" />}
+            {!isHurt ? <img id="monster-image" src={currentMonster.image} alt="" /> : <img id="monster-image" className="animate-hit" src={currentMonster.image} alt="" />}
 
-            <h3 className="monster-name">{currentMonster.name}</h3>
+            <h3 id="monster-name">{currentMonster.name}</h3>
 
             <div className="progress">
-                <div className="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style={{width: `${healthPercent}%`}}></div>
+                <div id="monster-health-bar" className="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style={{width: `${healthPercent}%`}}></div>
             </div>
 
-            <p>{currentMonster.description}</p>
+            <p id="monster-description">{currentMonster.description}</p>
         </div>
     );
 };
