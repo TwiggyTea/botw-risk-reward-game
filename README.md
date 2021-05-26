@@ -1,70 +1,24 @@
-# Getting Started with Create React App
+# DESCRIPTION
+This is a game about managing risk and reward!
+                Your goal is to gain as many points as you can by defeating monsters, without losing all of your hearts.
+                First you will choose a weapon. 
+                Then you have to choose if you fight the monsters ahead, or if you flee.
+                If you flee, your run ends and you get to keep all of your points!
+                If you decide to fight there will be a set number of monsters ahead of you, and you must keep battling until all the monsters are defeated, or you lose your hearts.
+                If you defeat all of the monsters you restore your health and you will once again choose a weapon and decide if you fight or flee.
+                If you lose all of your hearts, that is game over! Your run ends and you lose all of your points!
+                Your goal is to keep fighting as long as you can, and flee at just the right moment.
+                Good luck!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![image](https://media.git.generalassemb.ly/user/35841/files/d9f2e980-be18-11eb-9826-284da38a193b)
 
-## Available Scripts
+# TECHNOLOGIES USED
+    -react
+    -react router DOM
+    -HTML
+    -CSS
+    -Bootswatch library
+    -Hyrule Compendium API
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# TO PLAY THE GAME
+> [Just visit this link!](https://botw-risk-reward.herokuapp.com/) 
