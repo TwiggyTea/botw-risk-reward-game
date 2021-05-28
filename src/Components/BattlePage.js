@@ -58,10 +58,10 @@ const BattlePage = ({currentMonster, setCurrentMonster, heroWeapon, heroHealth, 
 
     const roundPassage = () => {
 
-        setIsHurt(true)
-        setTimeout(() => {
-            setIsHurt(false)
-        }, 700)
+        // setIsHurt(true)
+        // setTimeout(() => {
+        //     setIsHurt(false)
+        // }, 700)
 
         if (currentMonster?.health <= damageDone) {
 

@@ -22,11 +22,15 @@ const EquipmentSelectCard = ({equipment, setHeroWeapon}) => {
     return (
         <div className="equipment-select-card">
             <img id="equipment-select-image" src={selection.image} alt="" className="equipment-select-image"/>
-            <h5 id="equipment-select-name">{selection.name}</h5>
+            <div id="equipment-select-name-container">
+                <h5 id="equipment-select-name">{selection.name}</h5>
+            </div>
             <p id="equipment-select-description">{selection.description}</p>
-            <Link to="/fight-or-flee">
-            <button id="equipment-select-button" onClick={() => setHeroWeapon(selection)}>Choose Weapon</button>
-            </Link>
+            <div id="equipment-select-button-container">
+                <Link to="/fight-or-flee">
+                <button id="equipment-select-button" onClick={() => setHeroWeapon(selection)}>Choose Weapon</button>
+                </Link>
+            </div>
         </div>
     );
 };

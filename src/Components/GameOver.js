@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom'
 
-const GameOver = () => {
+const GameOver = ({setScore, setMaxMonsters}) => {
 
     const resetGame = () => {
-
+        setScore(0)
+        setMaxMonsters(1)
     }
 
     return (
@@ -14,7 +15,7 @@ const GameOver = () => {
             </h1>
         <div id="play-again-button-container">
             <Link to="/">
-                <button id="play-again-button">PLAY AGAIN?</button>
+                <button onClick={resetGame()} id="play-again-button">PLAY AGAIN?</button>
             </Link>
         </div>
         </div>

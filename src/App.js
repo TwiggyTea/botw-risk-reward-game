@@ -57,10 +57,10 @@ function App() {
             <FightOrFlee heroHealth={heroHealth} setHeroHealth={setHeroHealth} monstersAhead={monstersAhead} setMonstersAhead={setMonstersAhead} maxMonsters={maxMonsters} setMaxMonsters={setMaxMonsters}/>}/>
 
       <Route path="/score-screen" render={() => 
-            <ScoreScreen score={score}/>}/>
+            <ScoreScreen score={score} setScore={setScore} setMaxMonsters={setMaxMonsters}/>}/>
 
       <Route path="/game-over" render={() => 
-            <GameOver score={score}/>}/>
+            <GameOver score={score} setScore={setScore} setMaxMonsters={setMaxMonsters}/>}/>
 
       <Route path="/battle" render={() => {
         return (
